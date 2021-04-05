@@ -7,6 +7,8 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>User id : {{ $id }}</h1>
+  @foreach ($products as $product)
+      {{ $product }}
+  @endforeach
 </body>
 </html>

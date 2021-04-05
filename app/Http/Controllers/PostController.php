@@ -18,7 +18,8 @@ class PostController extends Controller
         dd($posts);
     }
     // store post
-    public function store(){
+    public function store()
+    {
         Post::create([
             'title'=>$title = 'this is a title',
             'body'=>'this is a body',
@@ -28,9 +29,29 @@ class PostController extends Controller
     }
 
     //display single record
-    public function show($id){
+    public function show($id)
+    {
         $post = Post::find($id);
         dd($post);
     }
 
-}
+    // update record
+
+    // public function update($id)
+    // {
+    //     $post = Post::find($id);
+    //     $post->title='updated title';
+    //     $post->body='updated body';
+    //     $post->save();
+    // }
+
+    public function update($id)
+    {
+        Post::where('id',$id)->update(
+            [
+                'title'=>'update title',
+                'body'=>'update body'
+            ]
+            );
+    }
+}    

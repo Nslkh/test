@@ -45,6 +45,8 @@ class TestController extends Controller
         //submit the form
         $this->validate(request(), [
             'title'=>'required|min:3|max:20'
+        ], [
+            'title.required'=>'please enter the name of the product'
         ]);
 
         dd(request('title'));

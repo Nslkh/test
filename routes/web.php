@@ -32,3 +32,7 @@ Route::get('/product', "TestController@product")->name('product');
 
 Route::get('/test/create', "TestController@create");
 Route::post('/test/store', "TestController@store")->name('test.store');
+
+//Posts
+
+Route::get('posts/store', "PostController@store");

@@ -61,4 +61,10 @@ class PostController extends Controller
         $post = Post::find($id);
         $post->delete();
     }
+
+    public function getPost()
+    {
+        $post = Post::where('title','this is a title')->first();
+        return($post);
+    }
 }    

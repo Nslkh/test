@@ -8,6 +8,10 @@
 </head>
 <body>
 
+  @if (Session::has('message'))
+      <p>{{ Session::get('message') }}</p>
+  @endif
+
   @if ($errors->any())
     <ul>
       @foreach ($errors->all() as $error)

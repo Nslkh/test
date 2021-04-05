@@ -48,6 +48,10 @@ class TestController extends Controller
             'description'=>'required'
         ]);
 
-        dd(request('title'));
+        //save to db
+        // return redirect()->back();
+        // return redirect('/product');
+        // return redirect()->route('product');
+        return back()->with('message', 'Your product was created successfully');
     }
 }

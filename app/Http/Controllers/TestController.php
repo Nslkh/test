@@ -31,6 +31,6 @@ class TestController extends Controller
     public function product()
     {
         $products = ['name' => 'iphone', 'price' => 123];
-        return view('about', ['products' => $products]);
+        return view('about', compact('products'));
     }
 }

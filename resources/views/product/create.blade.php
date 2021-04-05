@@ -7,12 +7,26 @@
   <title>Document</title>
 </head>
 <body>
+
+  @if ($errors->any())
+    <ul>
+      @foreach ($errors->all() as $error)
+          <p>{{ $error }}</p>
+      @endforeach
+    </ul>
+  @endif
   <form action="{{ route('test.store') }}" method="POST">
     @csrf
-    <input type="text" name="title" id="" placeholder="enter the title of product">
+    <input type="text" name="title" id="" placeholder="enter the title of product" value="{{ old('title') }}">
     @error('title')
         <p>{{ $message }}</p>
     @enderror
+
+    <textarea name="description" placeholder="description"></textarea>
+    @error('description')
+        <p>{{ $message }}</p>
+    @enderror
+
     <button type="submit">Submit</button>
   </form>
 </body>

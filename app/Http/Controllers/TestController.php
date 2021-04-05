@@ -40,13 +40,12 @@ class TestController extends Controller
         return view('product.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
         //submit the form
-        $this->validate(request(), [
-            'title'=>'required|min:3|max:20'
-        ], [
-            'title.required'=>'please enter the name of the product'
+        $this->validate($request, [
+            'title'=>'required|min:3|max:20',
+            'description'=>'required'
         ]);
 
         dd(request('title'));

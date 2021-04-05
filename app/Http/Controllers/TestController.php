@@ -40,10 +40,10 @@ class TestController extends Controller
         return view('product.create');
     }
 
-    public function store(Request $request)
+    public function store()
     {
         //submit the form
         // dd($request->title);
-        dd($request->get('title'));
+        dd(request  ('title'));
     }
 }

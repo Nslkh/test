@@ -27,3 +27,5 @@ Route::group(['prefix'=>"account"], function () {
     Route::get('/register', "TestController@register");
     Route::get('/login', "TestController@login");
 });
+
+Route::get('/product/{id}', "TestController@product");

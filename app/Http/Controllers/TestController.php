@@ -27,4 +27,9 @@ class TestController extends Controller
     {
         return "login page";
     }
+
+    public function product($id)
+    {
+        return view('about', ['id'=>$id]);
+    }
 }

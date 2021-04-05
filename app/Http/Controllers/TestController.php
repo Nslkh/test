@@ -17,4 +17,14 @@ class TestController extends Controller
     {
         return view('about');
     }
+
+    public function register()
+    {
+        return "register page";
+    }
+
+    public function login()
+    {
+        return "login page";
+    }
 }

@@ -22,3 +22,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/about-us', "TestController@index")->name('about');
+
+Route::group(['prefix'=>"account"], function () {
+    Route::get('/register', "TestController@register");
+    Route::get('/login', "TestController@login");
+});

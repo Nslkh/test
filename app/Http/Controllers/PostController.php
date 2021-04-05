@@ -8,6 +8,15 @@ use Str;
 
 class PostController extends Controller
 {
+    //display records
+
+    public function index()
+    {
+        $posts = Post::get();
+        // $posts = Post::where('id',3)->get();
+        // $posts = Post::all()->where('id',3);
+        dd($posts);
+    }
     // store post
     public function store(){
         Post::create([
@@ -16,6 +25,12 @@ class PostController extends Controller
             'slug'=>Str::slug($title),
             'user_id'=>1
         ]);
+    }
+
+    //display single record
+    public function show($id){
+        $post = Post::find($id);
+        dd($post);
     }
 
 }

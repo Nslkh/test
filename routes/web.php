@@ -36,3 +36,6 @@ Route::post('/test/store', "TestController@store")->name('test.store');
 //Posts
 
 Route::get('posts/store', "PostController@store");
+Route::get('posts',"PostController@index");
+Route::get('post/{id}',"PostController@show");
+

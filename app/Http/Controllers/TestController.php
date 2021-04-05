@@ -43,7 +43,10 @@ class TestController extends Controller
     public function store()
     {
         //submit the form
-        // dd($request->title);
-        dd(request  ('title'));
+        $this->validate(request(), [
+            'title'=>'required|min:3|max:20'
+        ]);
+
+        dd(request('title'));
     }
 }

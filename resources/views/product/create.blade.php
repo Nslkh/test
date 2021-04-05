@@ -10,6 +10,9 @@
   <form action="{{ route('test.store') }}" method="POST">
     @csrf
     <input type="text" name="title" id="" placeholder="enter the title of product">
+    @error('title')
+        <p>{{ $message }}</p>
+    @enderror
     <button type="submit">Submit</button>
   </form>
 </body>

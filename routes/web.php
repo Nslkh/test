@@ -39,5 +39,8 @@ Route::get('posts/store', "PostController@store");
 Route::get('posts',"PostController@index");
 Route::get('post/{id}',"PostController@show");
 
+
 Route::get('post/update/{id}',"PostController@update");
+
+Route::get('post/delete/{id}',"PostController@destroy");
 

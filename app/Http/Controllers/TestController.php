@@ -33,4 +33,17 @@ class TestController extends Controller
         $products = ['name' => 'iphone', 'price' => 123];
         return view('about', compact('products'));
     }
+
+    public function create()
+    {
+        // show the form
+        return view('product.create');
+    }
+
+    public function store(Request $request)
+    {
+        //submit the form
+        // dd($request->title);
+        dd($request->get('title'));
+    }
 }
